@@ -16,7 +16,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.register(UINib(nibName: "MyCell", bundle: nil), forCellReuseIdentifier: "MyCell")
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-        for i in 1...4 {
+        for i in 1...5 {
             var imageName = "\(i).jpg"
             if i == 4 {
                 imageName = "\(i).jpeg"

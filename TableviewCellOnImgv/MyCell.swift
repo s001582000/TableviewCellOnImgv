@@ -21,9 +21,12 @@ class MyCell: UITableViewCell {
     
     func setImageName(imageName:String) {
         if var image = UIImage(named: imageName) {
-            let base:CGFloat = image.size.width > image.size.height ? image.size.height / image.size.width : image.size.width / image.size.height
-            image = scaleImage(image: image, size: CGSize(width: UIScreen.main.bounds.size.width , height: UIScreen.main.bounds.size.width * base))
-            imgv.image = image
+            if image.size.width > image.size.height {
+                image = scaleImage(image: image, size: CGSize(width: UIScreen.main.bounds.size.width , height: UIScreen.main.bounds.size.width * image.size.height / image.size.width))
+                imgv.image = image
+            }else{
+                imgv.image = image
+            }
         }
     }
     
